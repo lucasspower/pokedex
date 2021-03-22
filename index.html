@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="icon" href="/imgs/favicon_io/favicon.ico" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <main id="container">
+      <h1 class="title">Pokedex</h1>
+      <p>
+        Projeto <strong>Pokedex,</strong> consumindo a API do
+        <em
+          ><a
+            href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjxzP_IjYbvAhV5IbkGHV3dDdIQFjAAegQIAhAE&url=https%3A%2F%2Fpokeapi.co%2F&usg=AOvVaw1ES4gIx9RShknDAj6E3ToZ"
+            target="blank"
+            >PokéAPI</a
+          ></em
+        >
+      </p>
+
+      <div class="seachPokemon" data-seach-pokemon="">
+        <form action="search" id="search-pokemon">
+          <label for="name">Search Pokemon</label>
+          <input
+            type="text"
+            name="name"
+            id="namePokemon"
+            placeholder="Pikachu"
+          />
+          <button type="submit" data-search="">Search</button>
+        </form>
+        <form action="random" id="random">
+          <label for="name">Random Pokemon</label>
+          <i class="fas fa-random" data-icon-random=""></i>
+        </form>
+      </div>
+
+      <div id="grid-container" data-container="grid">
+        <div class="pokemon"></div>
+      </div>
+    </main>
+  </body>
+  <!-- <script src="/main/main.js" async></script> -->
+  <script src="./main/main.js" async></script>
+</html>
