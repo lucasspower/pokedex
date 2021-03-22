@@ -3,8 +3,8 @@ export default function fetchPokemon() {
   const btnRandomPokemon = document.querySelector("[data-icon-random]");
   const btnSearchPokemon = document.querySelector("[data-search]");
   const valueNamePokemon = document.querySelector("#namePokemon");
-  const urlApiPokemon = "https://pokeapi.co/api/v2/pokemon/";
   const elementPokemon = document.querySelector(".pokemon");
+  const urlApiPokemon = "https://pokeapi.co/api/v2/pokemon/";
   const urlImgPokemon = "https://pokeres.bastionbot.org/images/pokemon/";
 
   const colors = {
@@ -37,6 +37,7 @@ export default function fetchPokemon() {
   const handleSeachPokemon = (e) => {
     e.preventDefault();
     const namePokemon = valueNamePokemon.value.toLowerCase();
+    elementPokemon.innerHTML = "";
     createCardPokemon(namePokemon);
     valueNamePokemon.focus();
   };
@@ -44,6 +45,7 @@ export default function fetchPokemon() {
   const handleRandomPokemon = () => {
     valueNamePokemon.focus();
     const randomNumber = Math.floor(Math.random() * 150);
+    elementPokemon.innerHTML = "";
     if (!!randomNumber) createCardPokemon(randomNumber);
   };
 
