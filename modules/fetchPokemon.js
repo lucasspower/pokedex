@@ -1,5 +1,4 @@
-export default function fetchPokemon() {
-  const events = ["click", "touchstart"];
+export default function fetchCardPokemon() {
   const btnRandomPokemon = document.querySelector("[data-icon-random]");
   const btnSearchPokemon = document.querySelector("[data-search]");
   const valueNamePokemon = document.querySelector("#namePokemon");
@@ -33,22 +32,6 @@ export default function fetchPokemon() {
     newElement.classList.add(_class);
     return newElement;
   };
-
-  const handleSeachPokemon = (e) => {
-    e.preventDefault();
-    const namePokemon = valueNamePokemon.value.toLowerCase();
-    elementPokemon.innerHTML = "";
-    createCardPokemon(namePokemon);
-    valueNamePokemon.focus();
-  };
-  // sorteia um pokemon dentre 1 e 150
-  const handleRandomPokemon = () => {
-    valueNamePokemon.focus();
-    const randomNumber = Math.floor(Math.random() * 150);
-    elementPokemon.innerHTML = "";
-    if (!!randomNumber) createCardPokemon(randomNumber);
-  };
-
   // funcao para informar erro
   const errMessage = () => {
     elementPokemon.classList.add("err");
@@ -60,8 +43,9 @@ export default function fetchPokemon() {
   // faz a busca pelo pokemon
   const fetchPokemon = async (nameOrIdPokemon) => {
     const response = await fetch(urlApiPokemon + nameOrIdPokemon);
-    if (response.status !== 404) return response.json();
-    else {
+    if (response.status !== 404) {
+      response.json();
+    } else {
       errMessage();
     }
   };
@@ -71,8 +55,8 @@ export default function fetchPokemon() {
     elementPokemon.innerHTML = "";
     try {
       const resultPokemon = await fetchPokemon(namePokemon);
-      if (!!resultPokemon) {
-        const name = resultPokemon.name;
+      if (!!resultPokemon === false) {
+        const { name } = resultPokemon;
         const typeName = resultPokemon.types[0].type.name;
         const allTypesPokemon = resultPokemon.types;
         const idPokemon = resultPokemon.id;
@@ -102,11 +86,25 @@ export default function fetchPokemon() {
     }
   };
 
+  const handleSeachPokemon = (e) => {
+    e.preventDefault();
+    const namePokemon = valueNamePokemon.value.toLowerCase();
+    elementPokemon.innerHTML = "";
+    createCardPokemon(namePokemon);
+    valueNamePokemon.focus();
+  };
+
+  // sorteia um pokemon dentre 1 e 150
+  const handleRandomPokemon = () => {
+    valueNamePokemon.focus();
+    const randomNumber = Math.floor(Math.random() * 150);
+    elementPokemon.innerHTML = "";
+    if (!!randomNumber === false) createCardPokemon(randomNumber);
+  };
+
   // adiciona eventos aos interáveis
-  events.forEach((e) => {
-    btnRandomPokemon.addEventListener(e, handleRandomPokemon);
-    btnSearchPokemon.addEventListener(e, handleSeachPokemon);
-  });
+  btnRandomPokemon.addEventListener("click", handleRandomPokemon);
+  btnSearchPokemon.addEventListener("click", handleSeachPokemon);
 
   function init() {
     handleRandomPokemon();

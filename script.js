@@ -1,3 +1,4 @@
 // prettier-ignore
-import fetchAPIpokemon from "./modules/fetchPokemon.js";
+import fetchAPIpokemon from "./modules/fetchPokemon";
+
 fetchAPIpokemon();
