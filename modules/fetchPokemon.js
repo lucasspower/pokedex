@@ -37,17 +37,12 @@ export default function fetchCardPokemon() {
     elementPokemon.classList.add("err");
     elementPokemon.innerText = "pokemon nao encotrado";
     elementPokemon.style.backgroundColor = "red";
-    console.clear();
   };
 
   // faz a busca pelo pokemon
   const fetchPokemon = async (nameOrIdPokemon) => {
     const response = await fetch(urlApiPokemon + nameOrIdPokemon);
-    if (response.status !== 404) {
-      response.json();
-    } else {
-      errMessage();
-    }
+    return response.status !== 404 ? response.json() : errMessage();
   };
 
   // cria os cards de pokemons
@@ -55,15 +50,18 @@ export default function fetchCardPokemon() {
     elementPokemon.innerHTML = "";
     try {
       const resultPokemon = await fetchPokemon(namePokemon);
-      if (!!resultPokemon === false) {
+      if (!!resultPokemon === true) {
         const { name } = resultPokemon;
+        const { id } = resultPokemon;
+
         const typeName = resultPokemon.types[0].type.name;
         const allTypesPokemon = resultPokemon.types;
-        const idPokemon = resultPokemon.id;
+        // const idPokemon = resultPokemon.id;
 
+        const idPokemon = createElement("span", "#" + id, "id-pokemon");
         const titlePokemon = createElement("h2", name, "name-pokemon");
         const imgPokemon = document.createElement("img");
-        imgPokemon.src = `${urlImgPokemon}${idPokemon}.png`;
+        imgPokemon.src = `${urlImgPokemon}${id}.png`;
         imgPokemon.setAttribute("alt", name);
 
         // coloca em uma array os types do pokemon, depois transformas os types em uma única string com um separadaor entre eles
@@ -78,6 +76,8 @@ export default function fetchCardPokemon() {
         );
         elementPokemon.style.backgroundColor = `${colors[typeName]}`;
         elementPokemon.appendChild(titlePokemon);
+
+        elementPokemon.appendChild(idPokemon);
         elementPokemon.appendChild(imgPokemon);
         elementPokemon.appendChild(elementTextType);
       }
@@ -91,15 +91,14 @@ export default function fetchCardPokemon() {
     const namePokemon = valueNamePokemon.value.toLowerCase();
     elementPokemon.innerHTML = "";
     createCardPokemon(namePokemon);
-    valueNamePokemon.focus();
   };
 
   // sorteia um pokemon dentre 1 e 150
   const handleRandomPokemon = () => {
-    valueNamePokemon.focus();
     const randomNumber = Math.floor(Math.random() * 150);
-    elementPokemon.innerHTML = "";
-    if (!!randomNumber === false) createCardPokemon(randomNumber);
+    if (!!randomNumber === true) {
+      createCardPokemon(randomNumber);
+    }
   };
 
   // adiciona eventos aos interáveis
@@ -108,7 +107,6 @@ export default function fetchCardPokemon() {
 
   function init() {
     handleRandomPokemon();
-    valueNamePokemon.focus();
   }
   init();
 }

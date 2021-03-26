@@ -38,11 +38,12 @@ button:focus {
 }
 #container .title {
   margin-bottom: 20px;
-  font-size: 3em;
+  font-size: 2em;
+  color: #00ff6a;
 }
 #container p {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  font-size: 1em;
+  margin-bottom: 10px;
 }
 em a {
   color: #9cd6ff;
@@ -71,7 +72,7 @@ button {
 }
 
 [data-search] {
-  background-color: rgb(0, 255, 106);
+  background-color: #00ff6a;
   font-size: 0.9rem;
   font-family: "Anime Ace 2.0 BB", Arial, Helvetica, sans-serif;
   width: auto;
@@ -79,11 +80,11 @@ button {
   font-weight: bold;
   display: inline-block;
   grid-column: 2/3;
-  border-radius: 0px 5px 5px 0px;
-  -webkit-border-radius: 0px 5px 5px 0px;
-  -moz-border-radius: 0px 5px 5px 0px;
-  -ms-border-radius: 0px 5px 5px 0px;
-  -o-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 20px 20px 0px;
+  -webkit-border-radius: 0px 20px 20px 0px;
+  -moz-border-radius: 0px 20px 20px 0px;
+  -ms-border-radius: 0px 20px 20px 0px;
+  -o-border-radius: 0px 20px 20px 0px;
 }
 [data-btn-random] {
   position: relative;
@@ -95,7 +96,7 @@ button {
   z-index: 1;
   font-size: 2rem;
   background-color: none;
-  color: rgb(0, 255, 106);
+  color: #00ff6a;
   cursor: pointer;
 }
 #namePokemon {
@@ -103,6 +104,7 @@ button {
   font-size: 0.9rem;
   font-family: "Anime Ace 2.0 BB", Arial, Helvetica, sans-serif;
   grid-column: 1/2;
+  border-radius: 20px 0 0 20px;
 }
 #random {
   display: flex;
@@ -121,12 +123,13 @@ button {
   align-items: center;
   padding: 0px 10px 10px;
   margin: 10px;
-  box-shadow: 1px 1px 7px 3px rgba(106, 192, 223, 0.507);
+  box-shadow: 1px 1px 7px 3px rgba(3, 255, 45, 0.219);
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  position: relative;
 }
 .pokemon.err {
   padding: 5px;
@@ -134,6 +137,9 @@ button {
 }
 
 .pokemon .name-pokemon {
+  display: block;
+  position: absolute;
+  top: -24px;
   font-family: "Pokemon Solid", Arial, Helvetica, sans-serif;
   font-size: 2.5em;
   padding: 0 5px;
@@ -142,6 +148,10 @@ button {
   background: -webkit-linear-gradient(rgb(0, 0, 0) 40%, rgb(64, 102, 117));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-border-radius: 20px 0 0 20px;
+  -moz-border-radius: 20px 0 0 20px;
+  -ms-border-radius: 20px 0 0 20px;
+  -o-border-radius: 20px 0 0 20px;
 }
 
 .pokemon img {
@@ -155,6 +165,26 @@ button {
   font-weight: bold;
   text-align: center;
   color: #000000;
+}
+.id-pokemon {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 0px 10px;
+  background-color: #00ff6a;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 2px solid #000000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 button {
   cursor: pointer;
