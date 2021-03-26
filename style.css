@@ -137,13 +137,10 @@ button {
 }
 
 .pokemon .name-pokemon {
-  display: block;
-  position: absolute;
-  top: -24px;
-  font-family: "Pokemon Solid", Arial, Helvetica, sans-serif;
+  margin: 15px 5px;
+  font-family: "Anime Ace 2.0 BB";
   font-size: 2.5em;
   padding: 0 5px;
-  font-weight: 100;
   letter-spacing: 2px;
   background: -webkit-linear-gradient(rgb(0, 0, 0) 40%, rgb(64, 102, 117));
   -webkit-background-clip: text;
@@ -152,6 +149,7 @@ button {
   -moz-border-radius: 20px 0 0 20px;
   -ms-border-radius: 20px 0 0 20px;
   -o-border-radius: 20px 0 0 20px;
+  font-weight: bold;
 }
 
 .pokemon img {
@@ -171,7 +169,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 80px 0px 10px;
+
+  margin-bottom: 20px;
   background-color: #00ff6a;
   color: #000000;
   font-weight: 500;
