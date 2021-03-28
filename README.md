@@ -1,3 +1,7 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/lucasspower/pokedex)
+![GitHub](https://img.shields.io/github/license/lucasspower/pokedex)
+![GitHub language count](https://img.shields.io/github/languages/count/lucasspower/pokedex)
+![GitHub top language](https://img.shields.io/github/languages/top/lucasspower/pokedex)
 # pokedex
 
 Projeto criao para consumir a API de PokéAPI [pip](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjxzP_IjYbvAhV5IbkGHV3dDdIQFjAAegQIAhAE&url=https%3A%2F%2Fpokeapi.co%2F&usg=AOvVaw1ES4gIx9RShknDAj6E3ToZ)
