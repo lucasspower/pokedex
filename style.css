@@ -139,7 +139,7 @@ button {
 .pokemon .name-pokemon {
   margin: 15px 5px;
   font-family: "Anime Ace 2.0 BB";
-  font-size: 2.5em;
+  font-size: 2rem;
   padding: 0 5px;
   letter-spacing: 2px;
   background: -webkit-linear-gradient(rgb(0, 0, 0) 40%, rgb(64, 102, 117));
